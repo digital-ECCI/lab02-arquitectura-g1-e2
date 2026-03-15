@@ -87,14 +87,31 @@ Indice:
 
 ## Evidencias de implementación
 
+## 4. Preguntas 
 
-## Conclusiones
+1. ¿En qué punto exacto del hardware se realiza el complemento a 1 y el complemento a 2?
+ - El complemento a 1 se realiza físicamente en las cuatro compuertas XOR que reciben cada bit de la entrada B junto con la señal Sel. Cuando Sel = 1, cada compuerta XOR compara su bit de B con un
+ 1 lógico, y dado que la operación XOR devuelve 1 únicamente cuando sus entradas son diferentes, cualquier bit de B que era 0 se convierte en 1 y cualquier bit que era 1 se convierte en 0, produciendo exactamente la inversión bit a bit que define el complemento a 1. Este proceso ocurre de manera simultánea en los cuatro bits en el mismo instante en que la señal Sel se activa, sin necesidad de procesamiento secuencial ni ciclos de reloj adicionales ya que las compuertas XOR son lógica combinacional pura.
+
+ El complemento a 2 se completa inmediatamente después, en la conexión entre la señal Sel y el acarreo de entrada Cin del sumador de 1 bit menos significativo, correspondiente al bit S0. Al conectar
+ Sel = 1 directamente a este Cin, el sumador de la etapa cero recibe un acarreo inicial de 1 que se suma al bit B_xor[0] ya invertido, efectuando la adición del +1 que convierte el complemento a 1 en complemento a 2. Este +1 se propaga naturalmente a través de la cadena de acarreos serie hacia los bits más significativos exactamente igual que cualquier otro acarreo aritmético, de modo que el complemento a 2 completo de B emerge en forma distribuida a lo largo de la cadena de cuatro sumadores, sin que exista un punto único donde "se sume el 1" de manera aislada, sino como parte integral del proceso de suma principal A + (∼B) + 1.
+
+ 2. ¿Por qué es suficiente conectar Sel directamente al Cin del primer sumador para completar el complemento a 2, en lugar de requerir un sumador adicional?
+  - Porque el complemento a 2 de B se define como (∼B) + 1. Las compuertas XOR controladas por Sel ya producen ∼B cuando Sel = 1, y la adición del +1 se realiza aprovechando el acarreo de entrada Cin del primer sumador de 1 bit. Dado que Cin = Sel = 1 en modo resta, el sumador de 4 bits calcula directamente A + (∼B) + 1, que es algebraicamente equivalente a A−B. De este modo, un único sumador de 4 bits con Cin controlado reemplaza lo que de otra manera requeriría un circuito restador independiente o un sumador adicional para el +1.
+
+  3. ¿Qué información aporta el acarreo de salida Co en las operaciones de suma y de resta?
+  - En la operación de suma (Sel = 0), Co = 1 indica desbordamiento aritmético, es decir, que el resultado de sumar A+B supera el rango representable en 4 bits (>15). En la operación de resta (Sel = 1), Co = 1 indica que el resultado es positivo o igual a cero (no hubo préstamo), mientras que Co = 0 indica que el sustraendo era mayor que el minuendo y el resultado es negativo, representado en complemento a 2 en los bits de salida S3, S2, S1, S0.
+
+  4. ¿Qué ventaja tiene reutilizar el módulo full_adder_4bit del laboratorio anterior frente a diseñar un circuito restador desde cero?
+  - Reutilizar el sumador verificado previamente reduce significativamente el tiempo de diseño y la probabilidad de introducir errores en hardware. Además, demuestra el principio fundamental de diseño modular en HDL: los bloques funcionales probados se convierten en componentes de biblioteca que pueden instanciarse en diseños más complejos sin necesidad de revalidarlos. En el contexto de sistemas digitales, esto es equivalente al uso de librerías en software, donde la confiabilidad del módulo base está garantizada por pruebas anteriores, y la nueva funcionalidad se construye exclusivamente sobre los bloques adicionales — en este caso, cuatro compuertas XOR y la conexión de Sel a Cin.
+
+## 5. Conclusiones
 
 La implementación del sumador/restador de 4 bits en Verilog sobre la DE10-Lite permitió verificar de manera práctica la propiedad fundamental del complemento a 2, demostrando que la resta binaria puede realizarse eficientemente reutilizando un sumador existente con la adición de compuertas XOR y una señal de control, sin necesidad de diseñar un circuito restador independiente. La señal Sel cumple un doble rol simultáneo al controlar tanto la inversión de los bits de B a través de las XOR como el acarreo de entrada Cin del primer sumador de 1 bit, completando el complemento a 2 de manera transparente en un único ciclo de operación.
 
 La arquitectura jerárquica adoptada — instanciando cuatro veces el full_adder_1bit dentro del full_adder_4bit y este a su vez dentro del sum_res_4bit — evidencia las ventajas del diseño modular en HDL, donde los módulos previamente verificados se reutilizan como bloques de construcción confiables, reduciendo la complejidad del diseño y facilitando tanto la simulación como la síntesis. La verificación mediante simulación con vectores de prueba que cubrieron casos de suma con desbordamiento, resta con resultado positivo y resta con resultado negativo permitió validar el comportamiento del circuito antes de su programación en hardware, confirmando que la interpretación del acarreo Co como indicador de signo en modo resta y como indicador de desbordamiento en modo suma es consistente con la teoría del complemento a 2.
 
-## Referencias
+## 6. Referencias
 
 * Harris, D. M., & Harris, S. L. (2012). Digital Design and Computer Architecture. Morgan Kaufmann.
 * Mano, M. M., & Ciletti, M. D. (2013). Digital Design: With an Introduction to the Verilog HDL. Pearson.
