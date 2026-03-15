@@ -92,3 +92,9 @@ Indice:
 
 
 ## Referencias
+
+* Harris, D. M., & Harris, S. L. (2012). Digital Design and Computer Architecture. Morgan Kaufmann.
+* Mano, M. M., & Ciletti, M. D. (2013). Digital Design: With an Introduction to the Verilog HDL. Pearson.
+* Digital ECCI. (2025). Lab02: Sumador/Restador de 4 bits - Fundamento teórico. Repositorio de    Arquitectura de Procesadores. https://github.com/digital-ECCI/Arquitectura-de-procesadores/blob/main/labs/02_lab02/README.md
+* Intel Corporation. (2023). DE10-Lite User Manual. Terasic Technologies.
+* Chu, P. P. (2008). FPGA Prototyping by Verilog Examples. Wiley-IEEE Press.
