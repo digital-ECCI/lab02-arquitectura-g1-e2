@@ -90,6 +90,9 @@ Indice:
 
 ## Conclusiones
 
+La implementación del sumador/restador de 4 bits en Verilog sobre la DE10-Lite permitió verificar de manera práctica la propiedad fundamental del complemento a 2, demostrando que la resta binaria puede realizarse eficientemente reutilizando un sumador existente con la adición de compuertas XOR y una señal de control, sin necesidad de diseñar un circuito restador independiente. La señal Sel cumple un doble rol simultáneo al controlar tanto la inversión de los bits de B a través de las XOR como el acarreo de entrada Cin del primer sumador de 1 bit, completando el complemento a 2 de manera transparente en un único ciclo de operación.
+
+La arquitectura jerárquica adoptada — instanciando cuatro veces el full_adder_1bit dentro del full_adder_4bit y este a su vez dentro del sum_res_4bit — evidencia las ventajas del diseño modular en HDL, donde los módulos previamente verificados se reutilizan como bloques de construcción confiables, reduciendo la complejidad del diseño y facilitando tanto la simulación como la síntesis. La verificación mediante simulación con vectores de prueba que cubrieron casos de suma con desbordamiento, resta con resultado positivo y resta con resultado negativo permitió validar el comportamiento del circuito antes de su programación en hardware, confirmando que la interpretación del acarreo Co como indicador de signo en modo resta y como indicador de desbordamiento en modo suma es consistente con la teoría del complemento a 2.
 
 ## Referencias
 
