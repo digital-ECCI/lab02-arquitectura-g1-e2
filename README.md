@@ -80,8 +80,8 @@ Indice:
 #### 1.1 Descripción
 
 #### 1.2 Diagramas
-![DIAGRAMA RTL ](assets/RTL.jpg)
-### Figura 2. Visualización de Lógica RTL: Sumador rRestador.
+![DIAGRAMA RTL](assets/RTL.jpg)
+### Figura 2. Visualización de Lógica RTL: Sumador Restador.
 
 
 ## Simulaciones 
