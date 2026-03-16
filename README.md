@@ -14,21 +14,23 @@ CODIDO 96818
 # Informe Laboratorio No. 2
  ## 1. Documentacion
   ## Introduccion
-
+<div align="justify">
   En este laboratorio abordamos la implementación de un circuito sumador/restador de 4 bits haciendo uso de la representación en complemento a 2, reutilizando el sumador de 4 bits desarrollado en el laboratorio anterior como bloque fundamental y extendiendo su funcionalidad mediante la incorporación de compuertas XOR y una señal de control Sel que determina la operación a realizar. Este enfoque nos permite demostrar una de las propiedades más importantes de la aritmética binaria: la equivalencia entre la resta y la suma del complemento a 2, lo que simplifica considerablemente el diseño del hardware al no requerir un circuito restador independiente.
   
+
   El principio de operación del complemento a 2 establece que la resta A−BA - B
   A−B puede transformarse en una suma equivalente de la siguiente forma:
    
   $$ A - B = A + (\sim B + 1) $$
 
+
  donde ∼B representa la inversión bit a bit de B (complemento a 1) y la adición de 1 completa la conversión al complemento a 2. Este principio es la base sobre la cual construimos la totalidad del circuito, y su implementación en hardware resulta elegante dado que no requiere lógica adicional significativa más allá de lo que ya ofrece el sumador del laboratorio previo.
 
- El desarrollo de esta práctica se realiza sobre la tarjeta de desarrollo DE10-Lite con el dispositivo 10M50DAF484C7G, utilizando Quartus Prime como IDE de síntesis e implementación, Verilog como lenguaje de descripción de hardware y GTKWave para la verificación mediante simulación antes de la programación física.
+ El desarrollo de esta práctica se realiza sobre la tarjeta de desarrollo DE10-Lite con el dispositivo 10M50DAF484C7G, utilizando Quartus Prime como IDE de síntesis e implementación, Verilog como lenguaje de descripción de hardware y GTKWave para la verificación mediante simulación antes de la programación física.</div>
 
  ## Desarrollo de la practica 
 
- 
+
   ## Implementacion del complemento a 2 a nivel del circuito
 
   En nuestro circuito, el proceso de conversión al complemento a 2 se materializa en dos acciones que el hardware ejecuta de manera simultánea al activar Sel = 1: las compuertas XOR conectadas a cada bit de la entrada B actúan como inversores controlados produciendo ∼B (complemento a 1), y ese mismo valor de Sel se conecta directamente al acarreo de entrada Cin del primer sumador de 1 bit, sumando automáticamente el +1 requerido por la definición del complemento a 2. La señal Sel cumple así un doble rol simultáneo sin necesidad de lógica adicional. Cuando Sel = 0, las compuertas XOR dejan pasar B sin modificación y Cin = 0, por lo que el circuito ejecuta la suma convencional A+B.
