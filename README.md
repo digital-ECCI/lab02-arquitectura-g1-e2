@@ -104,11 +104,15 @@ Indice:
   </a>
 </p>
 
+### Video 1. Implementación Sumador-Restador
+
 <p align="center">
   <a href="https://www.youtube.com/watch?v=z6y5yOqOw5s">
     <img src="https://img.youtube.com/vi/z6y5yOqOw5s/0.jpg" alt="Ejemplo Sumador-Restador" width="600">
   </a>
 </p>
+
+### Video 2. Ejemplo de funcionamiento Sumador-Restador
 
 ## 4. Preguntas 
 
