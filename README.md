@@ -100,7 +100,7 @@ El diagrama RTL ilustra un circuito aritmético combinacional diseñado para ope
 
 ### 1. Simulación del sumador/restador
 ![SIMULACION EN GTKWAVE](assets/sim.jpg)
-### Figura 4. Visualización  simulacion GTKWAVE.
+### Figura 4. Visualización  simulación sumador-restador en GTKWAVE.
 
 
 #### 1.1 Descripción
