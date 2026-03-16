@@ -88,7 +88,8 @@ Indice:
 Descripción de la Arquitectura: Sumador/Restador de 4 bits 
 El diagrama RTL ilustra un circuito aritmético combinacional diseñado para operar como un sumador y restador de 4 bits. El sistema está basado en una topología de acarreo en cascada (Ripple-Carry Adder), la cual conecta cuatro bloques sumadores completos de 1 bit (U0 a U3) de manera secuencial. En esta configuración, el acarreo de salida (Count) de cada etapa alimenta directamente la entrada de acarreo (Cin) de la etapa contigua más significativa.
 
-La capacidad del circuito para conmutar entre operaciones de suma y resta se logra de forma eficiente mediante la señal de control Sel y un banco de compuertas lógicas XOR (B_xor~0 a B_xor~3) acopladas a las entradas del operando B. Este arreglo de hardware implementa el principio matemático del complemento a 2 lógico:
+
+La capacidad del circuito para conmutar entre operaciones de suma y resta se logra de forma eficiente mediante la señal de control Sel y un banco de compuertas lógicas XOR acopladas a las entradas del operando B. Este arreglo de hardware implementa el principio matemático del complemento a 2 lógico:
 
 Operación de Suma (Sel = 0): Cuando la señal de control se encuentra en un nivel lógico bajo, las compuertas XOR actúan como elementos transparentes, permitiendo que los bits del bus B[3..0] ingresen a los sumadores sin modificaciones. Simultáneamente, el acarreo inicial (Cin en el bloque U0) recibe un 0 lógico. De este modo, el sistema ejecuta una suma binaria directa: $A + B$.
 
