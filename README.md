@@ -32,7 +32,7 @@ CODIDO 96818
 
 
   ## Implementacion del complemento a 2 a nivel del circuito
-
+<div align="justify">
   En nuestro circuito, el proceso de conversión al complemento a 2 se materializa en dos acciones que el hardware ejecuta de manera simultánea al activar Sel = 1: las compuertas XOR conectadas a cada bit de la entrada B actúan como inversores controlados produciendo ∼B (complemento a 1), y ese mismo valor de Sel se conecta directamente al acarreo de entrada Cin del primer sumador de 1 bit, sumando automáticamente el +1 requerido por la definición del complemento a 2. La señal Sel cumple así un doble rol simultáneo sin necesidad de lógica adicional. Cuando Sel = 0, las compuertas XOR dejan pasar B sin modificación y Cin = 0, por lo que el circuito ejecuta la suma convencional A+B.
 
  Para ilustrar el funcionamiento con un ejemplo concreto, consideremos la operación 7−5: 
@@ -44,7 +44,7 @@ CODIDO 96818
   * Descartando el acarreo de salida: 0010 = 2
 
   El acarreo de salida Co cumple una función de indicador de signo: cuando Co = 1 el resultado es positivo y válido en los 4 bits de salida So; cuando Co = 0 en una operación de resta, el resultado es negativo y se encuentra representado en complemento a 2 en las salidas S3, S2, S1, S0.
-
+</div>
   ## Arquirectura modular del diseño HDL
 
   La descripción de hardware se implementa en Verilog siguiendo una arquitectura modular compuesta por tres niveles jerárquicos. El nivel más bajo es el full_adder_1bit, instanciado cuatro veces para conformar el full_adder_4bit del laboratorio anterior, que a su vez es reutilizado dentro del módulo principal sum_res_4bit. Esta jerarquía de diseño respeta el principio de reutilización de componentes previamente verificados y facilita la síntesis e implementación en la DE10-Lite al garantizar que el comportamiento de los bloques base ya ha sido validado.
