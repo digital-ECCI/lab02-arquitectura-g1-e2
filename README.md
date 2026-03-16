@@ -17,6 +17,7 @@ CODIDO 96818
 <div align="justify">
   En este laboratorio abordamos la implementación de un circuito sumador/restador de 4 bits haciendo uso de la representación en complemento a 2, reutilizando el sumador de 4 bits desarrollado en el laboratorio anterior como bloque fundamental y extendiendo su funcionalidad mediante la incorporación de compuertas XOR y una señal de control Sel que determina la operación a realizar. Este enfoque nos permite demostrar una de las propiedades más importantes de la aritmética binaria: la equivalencia entre la resta y la suma del complemento a 2, lo que simplifica considerablemente el diseño del hardware al no requerir un circuito restador independiente.</div>
   
+  
   El principio de operación del complemento a 2 establece que la resta A−BA - B
   A−B puede transformarse en una suma equivalente de la siguiente forma:
    
