@@ -10,6 +10,13 @@ CODIGO 105191
 * JUAN DAVID BERNAL BERNAL
 CODIDO 96818
 
+Indice:
+1. [Documentación](#Documentación)
+2. [Simulaciones](#simulaciones)
+3. [Evidencias de implementación](#evidencias-de-implementación)
+4. [Preguntas](#preguntas)
+5. [Conclusiones](#conclusiones)
+6. [Referencias](#referencias)
 
 # Informe Laboratorio No. 2
  ## 1. Documentacion
@@ -70,13 +77,7 @@ CODIDO 96818
 
 
 
-Indice:
 
-2. [Simulaciones](#simulaciones)
-3. [Evidencias de implementación](#evidencias-de-implementación)
-4. [Preguntas](#preguntas)
-5. [Conclusiones](#conclusiones)
-6. [Referencias](#referencias)
 
 ## Documentación del diseño implementado
 
