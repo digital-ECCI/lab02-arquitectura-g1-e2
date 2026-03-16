@@ -79,29 +79,49 @@ Indice:
 
 #### 1.1 Descripción
 
-#### 1.2 Diagramas
+#### 1.2 Diagrama
+=======
+
+
 ![DIAGRAMA RTL](assets/RTL.jpg)
 ### Figura 2. Visualización de Lógica RTL: Sumador Restador.
 
 ![SIMULACION EN FPGA](assets/Fpga.jpeg)
 ### Figura 3. Visualización  Sumador Restador en FPGA.
 
-
-
 ## Simulaciones 
 
 ### 1. Simulación del sumador/restador
 
 #### 1.1 Descripción
+Descripción Funcional: Sumador / Restador de 4 Bits
+Este proyecto implementa una calculadora aritmética básica en la FPGA DE10-Lite, diseñada para sumar o restar dos números binarios de 4 bits de forma instantánea. Su arquitectura se divide en tres etapas principales:
 
+1. Entradas (Interruptores): El sistema recibe datos a través de los switches de la tarjeta. Ocho interruptores representan los operandos A y B (4 bits cada uno). Un noveno interruptor (Sel) actúa como señal de control: un nivel bajo (0) ordena una suma, y un nivel alto (1) ordena una resta.
+
+2. Procesamiento (Lógica de Complemento a 2): El núcleo del circuito es una cascada de cuatro sumadores completos. La operación de resta se logra mediante el método del Complemento a 2. Cuando Sel = 1, un banco de compuertas XOR invierte los bits del operando B (complemento a 1) y el mismo bit de selección inyecta un 1 en el acarreo inicial. Esto transforma matemáticamente la resta en una suma con un número negativo: A - B = A + (-B).
+
+3. Salidas (LEDs): El resultado se visualiza en los LEDs rojos de la tarjeta. Cuatro LEDs muestran el valor numérico obtenido, mientras que un quinto LED (Co o Acarreo) tiene una función de estado: indica desbordamiento (overflow) en caso de una suma muy grande, o ayuda a determinar el signo del resultado en caso de una resta.
 #### 1.2 Diagrama
 
 
 ## Evidencias de implementación
 
-[![Sumador-Restador](https://img.youtube.com/vi/MGunCP_BHR8/0.jpg)](https://www.youtube.com/watch?v=MGunCP_BHR8)
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=MGunCP_BHR8">
+    <img src="https://img.youtube.com/vi/MGunCP_BHR8/0.jpg" alt="Sumador-Restador" width="600">
+  </a>
+</p>
 
-[![Ejemplo Sumador-Restador](https://img.youtube.com/vi/z6y5yOqOw5s/0.jpg)](https://www.youtube.com/watch?v=z6y5yOqOw5s)
+### Video 1. Implementación Sumador-Restador
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=z6y5yOqOw5s">
+    <img src="https://img.youtube.com/vi/z6y5yOqOw5s/0.jpg" alt="Ejemplo Sumador-Restador" width="600">
+  </a>
+</p>
+
+### Video 2. Ejemplo de funcionamiento Sumador-Restador
 
 ## 4. Preguntas 
 
