@@ -80,8 +80,6 @@ Indice:
 #### 1.1 Descripción
 
 #### 1.2 Diagramas
-![DIAGRAMA RTL ](assets/RTL.jpg)
-### Figura 2. Visualización de Lógica RTL: Sumador rRestador.
 
 
 ## Simulaciones 
@@ -95,7 +93,9 @@ Indice:
 
 ## Evidencias de implementación
 
-[![Video Sumador-Restador](https://youtu.be/z6y5yOqOw5s?si=ThJW8rVso3uJa0SN)
+[![Sumador-Restador](https://img.youtube.com/vi/MGunCP_BHR8/0.jpg)](https://www.youtube.com/watch?v=MGunCP_BHR8)
+
+[![Ejemplo Sumador-Restador](https://img.youtube.com/vi/z6y5yOqOw5s/0.jpg)](https://www.youtube.com/watch?v=z6y5yOqOw5s)
 
 ## 4. Preguntas 
 
