@@ -15,14 +15,15 @@ CODIDO 96818
  ## 1. Documentacion
   ## Introduccion
 <div align="justify">
-  En este laboratorio abordamos la implementación de un circuito sumador/restador de 4 bits haciendo uso de la representación en complemento a 2, reutilizando el sumador de 4 bits desarrollado en el laboratorio anterior como bloque fundamental y extendiendo su funcionalidad mediante la incorporación de compuertas XOR y una señal de control Sel que determina la operación a realizar. Este enfoque nos permite demostrar una de las propiedades más importantes de la aritmética binaria: la equivalencia entre la resta y la suma del complemento a 2, lo que simplifica considerablemente el diseño del hardware al no requerir un circuito restador independiente.</div>
+  En este laboratorio abordamos la implementación de un circuito sumador/restador de 4 bits haciendo uso de la representación en complemento a 2, reutilizando el sumador de 4 bits desarrollado en el laboratorio anterior como bloque fundamental y extendiendo su funcionalidad mediante la incorporación de compuertas XOR y una señal de control Sel que determina la operación a realizar. Este enfoque nos permite demostrar una de las propiedades más importantes de la aritmética binaria: la equivalencia entre la resta y la suma del complemento a 2, lo que simplifica considerablemente el diseño del hardware al no requerir un circuito restador independiente.
   
-  
+
   El principio de operación del complemento a 2 establece que la resta A−BA - B
   A−B puede transformarse en una suma equivalente de la siguiente forma:
    
   $$ A - B = A + (\sim B + 1) $$
-<div align="justify">
+
+
  donde ∼B representa la inversión bit a bit de B (complemento a 1) y la adición de 1 completa la conversión al complemento a 2. Este principio es la base sobre la cual construimos la totalidad del circuito, y su implementación en hardware resulta elegante dado que no requiere lógica adicional significativa más allá de lo que ya ofrece el sumador del laboratorio previo.
 
  El desarrollo de esta práctica se realiza sobre la tarjeta de desarrollo DE10-Lite con el dispositivo 10M50DAF484C7G, utilizando Quartus Prime como IDE de síntesis e implementación, Verilog como lenguaje de descripción de hardware y GTKWave para la verificación mediante simulación antes de la programación física.</div>
