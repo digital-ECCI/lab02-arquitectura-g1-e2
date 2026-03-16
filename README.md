@@ -3,9 +3,13 @@
 # Lab02 - Sumador/Restador de 4 bits
 
 # Integrantes
-* Mauricio Sanchez (@MauricioSanchez90)
-* Ferney Reyes (@Ferney-Reyes)
-* Juan David Bernal Bernal(@juaneto01) 
+
+FERNEY REYES MONSALVE  CODIGO 2564
+WILLIAM MAURICIO SANCHEZ GAMEZ
+CODIGO 105191
+JUAN DAVID BERNAL BERNAL
+CODIDO 96818
+
 
 # Informe 
  ## 1. Documentacion
