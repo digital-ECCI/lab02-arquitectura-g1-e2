@@ -64,8 +64,8 @@ CODIDO 96818
  La conexión entre el vector B_xor y el sumador de 4 bits, combinada con la conexión directa de Sel al acarreo de entrada Cin del sumador de 1 bit menos significativo, es lo que materializa el mecanismo del complemento a 2 en hardware. El sumador de 4 bits calcula entonces la expresión A + Bxor + SelA, que cuando Sel = 1 se convierte en A + (∼B) + 1, algebraicamente equivalente a A−B. Los acarreos intermedios generados entre cada par de sumadores de 1 bit se propagan a través de señales internas de tipo wire que conectan el Cout de cada etapa con el Cin de la siguiente, garantizando que la propagación del acarreo serie se complete correctamente antes de que las salidas So[3:0] y Co tomen sus valores estables.</div>
 
  ## Asignacion de perifericos en la FPGA
-
- Para la implementación física en la tarjeta DE10-Lite se asignan los periféricos disponibles de la siguiente manera: los switches SW[3:0] corresponden al operando A, los switches SW[7:4] al operando B, el switch SW[9] controla la señal Sel (posición baja = suma, posición alta = resta), los LEDs LEDR[3:0] muestran el resultado So, y LEDR[9] indica el estado del acarreo de salida Co. Esta distribución aprovecha los recursos de entrada/salida disponibles en la tarjeta de manera intuitiva, agrupando los operandos en la zona inferior de los switches y reservando el switch más significativo para el control de operación.
+<div align="justify">
+ Para la implementación física en la tarjeta DE10-Lite se asignan los periféricos disponibles de la siguiente manera: los switches SW[3:0] corresponden al operando A, los switches SW[7:4] al operando B, el switch SW[9] controla la señal Sel (posición baja = suma, posición alta = resta), los LEDs LEDR[3:0] muestran el resultado So, y LEDR[9] indica el estado del acarreo de salida Co. Esta distribución aprovecha los recursos de entrada/salida disponibles en la tarjeta de manera intuitiva, agrupando los operandos en la zona inferior de los switches y reservando el switch más significativo para el control de operación.</div>
 
 
 
