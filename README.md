@@ -83,8 +83,9 @@ Indice:
 ![DIAGRAMA RTL](assets/RTL.jpg)
 ### Figura 2. Visualización de Lógica RTL: Sumador Restador.
 
-![SIMULACION EN FPGA](assets/Implementacion Fpga.jpg)
+![SIMULACION EN FPGA] (assets/Fpga.jpeg)
 ### Figura 3. Visualización  Sumador Restador en FPGA.
+
 
 
 ## Simulaciones 
