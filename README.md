@@ -93,6 +93,8 @@ Indice:
 
 ## Evidencias de implementación
 
+[![Video Sumador-Restador](https://youtu.be/z6y5yOqOw5s?si=ThJW8rVso3uJa0SN)
+
 ## 4. Preguntas 
 
 1. ¿En qué punto exacto del hardware se realiza el complemento a 1 y el complemento a 2?
