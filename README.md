@@ -45,8 +45,9 @@ CODIDO 96818
 
   El acarreo de salida Co cumple una función de indicador de signo: cuando Co = 1 el resultado es positivo y válido en los 4 bits de salida So; cuando Co = 0 en una operación de resta, el resultado es negativo y se encuentra representado en complemento a 2 en las salidas S3, S2, S1, S0.
 </div>
-  ## Arquirectura modular del diseño HDL
 
+  ## Arquirectura modular del diseño HDL
+<div align="justify">
   La descripción de hardware se implementa en Verilog siguiendo una arquitectura modular compuesta por tres niveles jerárquicos. El nivel más bajo es el full_adder_1bit, instanciado cuatro veces para conformar el full_adder_4bit del laboratorio anterior, que a su vez es reutilizado dentro del módulo principal sum_res_4bit. Esta jerarquía de diseño respeta el principio de reutilización de componentes previamente verificados y facilita la síntesis e implementación en la DE10-Lite al garantizar que el comportamiento de los bloques base ya ha sido validado.
   El módulo full_adder_1bit implementa la suma de tres bits (dos operandos y acarreo de entrada) mediante las expresiones lógicas booleanas que definen la función de suma completa:
 
@@ -60,7 +61,7 @@ CODIDO 96818
 
  El nivel superior de la jerarquía es el módulo sum_res_4bit, que constituye el corazón del diseño y donde reside toda la lógica de selección de operación. Este módulo recibe como entradas los vectores de 4 bits A[3:0] y B[3:0] correspondientes a los dos operandos, y la señal escalar Sel que determina si el circuito realizará suma o resta. Internamente, el módulo declara un vector auxiliar B_xor[3:0] que almacena el resultado de aplicar la operación XOR bit a bit entre cada uno de los cuatro bits de B y la señal Sel, de modo que cuando Sel = 0 la expresión B ^ {4{Sel}} replica cuatro veces el valor cero y lo opera con cada bit de B dejando el vector sin cambios, mientras que cuando Sel = 1 replica cuatro veces el valor uno forzando la inversión de todos los bits de B y produciendo su complemento a 1. Este comportamiento es posible gracias al operador de replicación {4{Sel}} de Verilog, que expande la señal de 1 bit en un vector de 4 bits idénticos, permitiendo realizar simultáneamente las cuatro operaciones XOR en una única expresión de asignación continua.
 
- La conexión entre el vector B_xor y el sumador de 4 bits, combinada con la conexión directa de Sel al acarreo de entrada Cin del sumador de 1 bit menos significativo, es lo que materializa el mecanismo del complemento a 2 en hardware. El sumador de 4 bits calcula entonces la expresión A + Bxor + SelA, que cuando Sel = 1 se convierte en A + (∼B) + 1, algebraicamente equivalente a A−B. Los acarreos intermedios generados entre cada par de sumadores de 1 bit se propagan a través de señales internas de tipo wire que conectan el Cout de cada etapa con el Cin de la siguiente, garantizando que la propagación del acarreo serie se complete correctamente antes de que las salidas So[3:0] y Co tomen sus valores estables.
+ La conexión entre el vector B_xor y el sumador de 4 bits, combinada con la conexión directa de Sel al acarreo de entrada Cin del sumador de 1 bit menos significativo, es lo que materializa el mecanismo del complemento a 2 en hardware. El sumador de 4 bits calcula entonces la expresión A + Bxor + SelA, que cuando Sel = 1 se convierte en A + (∼B) + 1, algebraicamente equivalente a A−B. Los acarreos intermedios generados entre cada par de sumadores de 1 bit se propagan a través de señales internas de tipo wire que conectan el Cout de cada etapa con el Cin de la siguiente, garantizando que la propagación del acarreo serie se complete correctamente antes de que las salidas So[3:0] y Co tomen sus valores estables.</div>
 
  ## Asignacion de perifericos en la FPGA
 
