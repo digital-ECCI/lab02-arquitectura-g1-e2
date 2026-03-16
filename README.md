@@ -94,7 +94,7 @@ Indice:
 ### 1. Simulación del sumador/restador
 
 #### 1.1 Descripción
-Descripción Funcional: Sumador / Restador de 4 Bits
+
 Este proyecto implementa una calculadora aritmética básica en la FPGA DE10-Lite, diseñada para sumar o restar dos números binarios de 4 bits de forma instantánea. Su arquitectura se divide en tres etapas principales:
 
 1. Entradas (Interruptores): El sistema recibe datos a través de los switches de la tarjeta. Ocho interruptores representan los operandos A y B (4 bits cada uno). Un noveno interruptor (Sel) actúa como señal de control: un nivel bajo (0) ordena una suma, y un nivel alto (1) ordena una resta.
