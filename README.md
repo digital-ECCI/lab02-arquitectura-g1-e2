@@ -92,6 +92,9 @@ Indice:
 ## Simulaciones 
 
 ### 1. Simulación del sumador/restador
+![SIMULACION EN GTKWAVE](assets/sim.jpg)
+### Figura 4. Visualización  simulacion GTKWAVE.
+
 
 #### 1.1 Descripción
 
