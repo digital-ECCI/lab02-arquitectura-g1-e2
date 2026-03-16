@@ -3,7 +3,9 @@
 # Lab02 - Sumador/Restador de 4 bits
 
 # Integrantes
-
+* Mauricio Sanchez (@MauricioSanchez90)
+* Ferney Reyes (@Ferney-Reyes)
+* Juan David Bernal Bernal(@juaneto01) 
 
 # Informe 
  ## 1. Documentacion
