@@ -98,9 +98,17 @@ Indice:
 
 ## Evidencias de implementación
 
-[![Sumador-Restador](https://img.youtube.com/vi/MGunCP_BHR8/0.jpg)](https://www.youtube.com/watch?v=MGunCP_BHR8)
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=MGunCP_BHR8">
+    <img src="https://img.youtube.com/vi/MGunCP_BHR8/0.jpg" alt="Sumador-Restador" width="600">
+  </a>
+</p>
 
-[![Ejemplo Sumador-Restador](https://img.youtube.com/vi/z6y5yOqOw5s/0.jpg)](https://www.youtube.com/watch?v=z6y5yOqOw5s)
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=z6y5yOqOw5s">
+    <img src="https://img.youtube.com/vi/z6y5yOqOw5s/0.jpg" alt="Ejemplo Sumador-Restador" width="600">
+  </a>
+</p>
 
 ## 4. Preguntas 
 
