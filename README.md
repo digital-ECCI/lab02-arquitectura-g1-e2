@@ -109,7 +109,7 @@ El resultado de la operación (suma o resta) se visualiza en el bus de salida de
 
 ### 1. Simulación del sumador/restador
 ![SIMULACION EN GTKWAVE](assets/sim.jpg)
-### Figura 4. Visualización  simulacion GTKWAVE.
+### Figura 4. Visualización  simulación sumador-restador en GTKWAVE.
 
 
 #### 1.1 Descripción
